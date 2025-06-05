@@ -1,10 +1,16 @@
+
 "use strict";
 
+// OpenWeatherMap API key
 const api_key = "966e4c79e9fc73aa466bc83495b7a0df";
 
+// Fetch Data From API
 export const fetchData = function (URL, callback) {
   fetch(`${URL}&appid=${api_key}`)
     .then((res) => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
       return res.json();
     })
     .then((data) => {
@@ -15,19 +21,30 @@ export const fetchData = function (URL, callback) {
     });
 };
 
+// API Endpoint URLs
 export const url = {
+
+  // Get Current Weather
   currentWeather(lat, lon) {
-    return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric`;
+    return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`;
   },
+
+  // Get Forecast
   forecast(lat, lon) {
-    return `https://api.openweathermap.org/data/2.5/forecast?${lat}&${lon}&units=metric`;
+    return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric`;
   },
+
+  // Get Air Pollution
   airPollution(lat, lon) {
-    return `https://api.openweathermap.org/data/2.5/air_pollution?${lat}&${lon}`;
+    return `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}`;
   },
+
+  // Get Location From Coordinates
   reverseGeo(lat, lon) {
-    return `https://api.openweathermap.org/geo/1.0/reverse?${lat}&${lon}&limit=5`;
+    return `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5`;
   },
+  
+  // Get Coordinates From Location Name
   geo(query) {
     return `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5`;
   },
