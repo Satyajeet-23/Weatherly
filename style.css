@@ -1,7 +1,6 @@
 /* Custom Properties */
 
 :root {
-
   /* Colors */
   --primary: #9580d1;
   --on-primary: #0a0912;
@@ -31,14 +30,18 @@
   --black-alpha-10: hsla(0, 0%, 0%, 0.22);
 
   /* Gradient Colors */
-  --gradient-1: linear-gradient(180deg,
-      hsla(270, 5%, 4%, 0) 0%,
-      hsla(270, 5%, 4%, 0.8) 65%,
-      hsl(270, 5%, 4%) 100%);
-  --gradient-2: linear-gradient(180deg,
-      hsla(260, 5%, 8%, 0) 0%,
-      hsla(260, 5%, 8%, 0.8) 65%,
-      hsl(260, 5%, 8%) 100%);
+  --gradient-1: linear-gradient(
+    180deg,
+    hsla(270, 5%, 4%, 0) 0%,
+    hsla(270, 5%, 4%, 0.8) 65%,
+    hsl(270, 5%, 4%) 100%
+  );
+  --gradient-2: linear-gradient(
+    180deg,
+    hsla(260, 5%, 8%, 0) 0%,
+    hsla(260, 5%, 8%, 0.8) 65%,
+    hsl(260, 5%, 8%) 100%
+  );
 
   /* Typography */
 
@@ -75,7 +78,6 @@
   /* Transition */
   --transition-short: 100ms ease;
 }
-
 
 /* Reset Styles */
 
@@ -140,7 +142,6 @@ sup {
   font-size: 0.75em;
 }
 
-
 /* Global Styles */
 
 html {
@@ -175,7 +176,6 @@ body {
   border-radius: var(--radius-pill);
 }
 
-
 /* Custom Font */
 
 @font-face {
@@ -184,7 +184,6 @@ body {
   font-weight: 400;
   src: url(./Assets/Fonts/material-symbol-rounded.woff2) format("woff2");
 }
-
 
 /* Material Icons Styles ( Icons ) */
 
@@ -206,7 +205,6 @@ body {
   width: 1em;
   overflow: hidden;
 }
-
 
 /* Reused Styles */
 
@@ -363,15 +361,30 @@ body {
   }
 }
 
-
 /* Header Section */
 
 .header .btn-primary .span {
   display: none;
 }
 
+.logo-wrapper > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo-text {
+  font-size: 15px;
+  font-weight: bolder;
+  margin-top: 10px;
+  font-family: "Julius Sans One", sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.6rem;
+}
+
 .logo img {
-  width: 150px;
+  width: 35px;
 }
 
 .header .container,
@@ -391,7 +404,6 @@ body {
 .header .btn-primary {
   padding-inline: 12px;
 }
-
 
 /* Search Section */
 
@@ -532,7 +544,6 @@ body {
   font-weight: 400;
 }
 
-
 /* Main Section */
 
 main {
@@ -579,8 +590,7 @@ article.container::before {
   margin-block-end: 16px;
 }
 
-
-/* Current Weather */
+/* CURRENT WEATHER */
 
 .current-weather-card .wrapper {
   margin-block: 12px;
@@ -593,7 +603,7 @@ article.container::before {
   margin-inline: auto;
 }
 
-.current-weather-card>.body-3 {
+.current-weather-card > .body-3 {
   text-transform: capitalize;
 }
 
@@ -616,7 +626,6 @@ article.container::before {
 .current-weather-card .meta-text {
   color: var(--on-surface-variant);
 }
-
 
 /* FORECAST */
 
@@ -642,11 +651,10 @@ article.container::before {
   font-weight: var(--weight-semiBold);
 }
 
-.forecast-card .card-item>.label-1 {
+.forecast-card .card-item > .label-1 {
   width: 100%;
   text-align: right;
 }
-
 
 /* HIGHLIGHTS */
 
@@ -699,7 +707,6 @@ article.container::before {
   color: var(--on-surface-variant);
 }
 
-
 /* AQI */
 
 .badge {
@@ -747,7 +754,6 @@ article.container::before {
   margin-block-end: 4px;
 }
 
-
 /* HOURLY FORECAST */
 
 .slider-container {
@@ -788,7 +794,6 @@ article.container::before {
   margin-block: 12px;
 }
 
-
 /* Footer */
 
 .footer,
@@ -818,7 +823,6 @@ article.container::before {
 .footer .gitLink {
   display: inline;
 }
-
 
 /* Loader Section */
 
@@ -853,7 +857,8 @@ article.container::before {
   height: 12px;
   border-radius: 50%;
   background-color: var(--on-background);
-  animation: bounce 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+  animation: bounce 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite
+    alternate;
   will-change: transform, height, border-radius;
 }
 
@@ -891,7 +896,8 @@ article.container::before {
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.2);
   filter: blur(0.5px);
-  animation: shadowEffect 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+  animation: shadowEffect 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite
+    alternate;
   will-change: transform;
 }
 
@@ -919,7 +925,6 @@ article.container::before {
     opacity: 0.2;
   }
 }
-
 
 /* Notification Section */
 
@@ -991,7 +996,6 @@ article.container::before {
   background-color: var(--surface);
 }
 
-
 /* Error Section */
 
 .error-content {
@@ -1000,7 +1004,8 @@ article.container::before {
   left: 0;
   width: 100%;
   height: 100vh;
-  height: 100svh; /* For Mobile Browser */
+  height: 100svh;
+  /* For Mobile Browser */
   background-color: var(--background);
   flex-direction: column;
   justify-content: center;
@@ -1013,13 +1018,12 @@ article.container::before {
   margin-block-start: 20px;
 }
 
-
 /* Media Queries */
 
 /* Responsive For Large Than 768px Screen */
 
 @media (min-width: 768px) {
-
+  
   /* Reused Style */
   .container {
     padding: 24px;
@@ -1029,7 +1033,7 @@ article.container::before {
     --title-1: 2.4rem;
   }
 
-  .section>.title-2 {
+  .section > .title-2 {
     margin-block-end: 16px;
   }
 
@@ -1052,6 +1056,19 @@ article.container::before {
 
   .header-actions {
     gap: 24px;
+  }
+
+  .logo-wrapper > a {
+    gap: 8px;
+  }
+
+  .logo-text {
+    letter-spacing: 2.2px;
+    font-size: 2.1rem;
+  }
+
+  .logo img {
+    width: 50px;
   }
 
   .header .btn-primary {
@@ -1194,10 +1211,6 @@ article.container::before {
     display: none;
   }
 
-  .logo img {
-    width: 200px;
-  }
-
   .header {
     position: relative;
     height: 120px;
@@ -1223,7 +1236,7 @@ article.container::before {
     border-block-end: none;
   }
 
-  .search-wrapper>.m-icon {
+  .search-wrapper > .m-icon {
     display: block;
   }
 
